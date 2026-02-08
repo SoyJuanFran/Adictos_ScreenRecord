@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adictos ScreenRecord</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { overflow: hidden; background: transparent; }
+        canvas { display: none; }
+
+        #spectateOverlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 9999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #spectateView {
+            max-width: 90vw;
+            max-height: 85vh;
+            border: 2px solid rgba(255, 60, 60, 0.7);
+            border-radius: 6px;
+            background: #111;
+            image-rendering: auto;
+        }
+
+        #spectateInfo {
+            color: #ff4444;
+            font-family: 'Segoe UI', Consolas, monospace;
+            font-size: 14px;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+        }
+
+        #spectateBadge {
+            position: absolute;
+            top: 12px; left: 12px;
+            background: rgba(255, 0, 0, 0.85);
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            animation: specPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes specPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="spectateOverlay">
+        <div id="spectateBadge">&#9679; LIVE SPECTATE</div>
+        <img id="spectateView" alt="">
+        <div id="spectateInfo"></div>
+    </div>
+
+    <script src="fix-webm-duration.js"></script>
+    <script src="recorder.js"></script>
+</body>
+</html>

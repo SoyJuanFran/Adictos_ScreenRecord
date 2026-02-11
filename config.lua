@@ -16,7 +16,7 @@ Config.Resolution = {
 Config.FPS = 24
 
 -- Discord webhook URL where videos are uploaded as attachments
-Config.DiscordWebhook = 'https://discord.com/api/webhooks/1469522303560847545/Gwk8fK3AzwQbfuADVK-4lvwgLTiG9FI5ViTX5WelstUCx4wo9AvlwEMU17oFqX1fCWX8'
+Config.DiscordWebhook = ''
 
 -- Bot username shown in Discord
 Config.WebhookUsername = 'Screen Recorder'
